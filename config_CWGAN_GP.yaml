@@ -1,0 +1,144 @@
+base_pth:
+  - /home/tl/CVAE-GANS/egg drilling dataset/dry/
+  - /home/tl/CVAE-GANS/egg drilling dataset/wet/
+
+# Batch size for training
+batch_size: 128
+
+# Beta1 parameter, not in use for RMSProp
+betas:
+  - 0.5
+  - 0.9
+
+# Folder arrangement of the dataset with their respective classes
+# Drilling angle: sm, lg, v; Drilling force: 0, 1, 2, 3
+cls_pth:
+  sm:
+  - '0'
+  - '1'
+  - '2'
+  - '3'
+  lg:
+  - '0'
+  - '1'
+  - '2'
+  - '3'
+  v:
+  - '0'
+  - '1'
+  - '2'
+  - '3'
+
+# Training epochs
+epochs: 1000
+
+# Training with mel spectrogram strips. Always 'True' for shallow CGAN
+in_strips: False
+num_strips: 8
+
+# Lambda 1 to Lambda 4 are constant multipliers for loss functions
+lambda1: 3
+lambda2: 1
+lambda3: 0.001
+lambda4: 0.001
+
+# The penalty coefficient for WGAN-GP
+lambda_gp: 10
+
+# Number of critic iterations for WGAN-GP
+n_critic: 5
+
+# Dimension of latent space / distribution	
+latent_dim: 64
+
+# Learning rate of the optimizer
+learning_rate: 5.0e-05
+
+# Number of categories in each class
+num_class:
+  - 3
+  - 4
+
+# Normalize the audio waveform to a magnitude between -1 and 1
+max_wav_value: 32768.0
+
+# Desired sample rate
+sample_rate: 22050
+
+# Set the size of audio segment to be convert to mel spec
+segment_size: 32768
+
+# To split the audio according to the segment size
+split: True
+
+# For STFT
+n_fft: 1024
+
+# For mel scaling of a magnitude spectrogram, n_fft / 2 + 1
+n_stft: 513
+
+# For STFT
+win_length: 1024
+
+# For STFT, set hop length to get desired time frame. Current melspec size: (128 x 128), affected by segment size, sample rate and audio duration
+hop_length: 256
+
+# Min frequency
+f_min: 0
+
+# Max frequency. Should at most half of the sample rate
+f_max: 11025
+
+# Number of mel filter banks for mel spectrogram
+n_mels: 128
+
+# Default hanning window for STFT computations
+window_fn: hann_window
+
+# Raise the complex spectrogram to the power of N. Defaulted at 2 for mel spectrogram computation
+power: 2
+
+# To normalize spectrogram / mel spectrogram
+normalized: False
+
+# Momentum for Griffin-Lim numerical calculations
+momentum: 0.99
+
+# Number of iterations for Griffin-Lim.
+n_iter: 32
+
+# To randomly shuffle the data during dataset and dataloader phase
+shuffle: True
+
+# To enable log range compression on the mel spectrogram
+enable_compression: True
+
+# Number of workers for dataloading
+num_workers: 2
+
+# Which n-th conv layer for feature matching in the discriminator, 0 to 4
+dis_fm_idx: 4
+
+# N-points for the EWMA filter for the feature maps, previously 25
+ewma_n: 10
+
+# Set whether to load from checkpoint
+load_from_checkpoint: False
+
+# Set whether to use GPU (CUDA) or not
+cuda: True
+
+# Set the class condition of the forces, ie: 0, 1, 2, 3. For inference/generation
+force_level: 3
+
+# Set the class condition of the drilling angles, ie: 0, 1, 2. For inference
+drill_angle: 0
+
+# Select the number of generations of fake mel spectrogram
+num_gen: 30
+
+# Select the starting index for naming the generated files (to avoid overlap)
+start_index: 0
+
+# Define filepath to save generated mel spectrogram as image, format is 'png' always
+save_path_for_generated: /home/tl/CVAE-GANS/evaluations/for FAD/generated_CWGANGP/

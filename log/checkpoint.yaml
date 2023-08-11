@@ -1,0 +1,6 @@
+checkpoint_at_epoch: 1
+checkpoint_dir: log/checkpoint/
+checkpoint_file: log/checkpoint/CGANs_WGAN_GP_950.pt
+checkpoint_interval_batch: 191
+checkpoint_interval_epoch: 50
+checkpoint_within_epoch: 0
