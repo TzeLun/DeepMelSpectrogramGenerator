@@ -10,7 +10,7 @@ def train_CWGANGP():
 
     parser.add_argument('--config', default='config_CWGAN_GP.yaml')
     parser.add_argument('--checkpoint', default='log/checkpoint.yaml')
-    parser.add_argument('--load_from_checkpoint', default=False)
+    parser.add_argument('--load_from_checkpoint', default=False, action='store_true')
 
     a = parser.parse_args()
 
