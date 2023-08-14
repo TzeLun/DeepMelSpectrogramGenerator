@@ -1,0 +1,9 @@
+numpy==1.19.5
+Pillow==8.4.0
+PyYAML==3.12
+six==1.16.0
+torch==1.10.2
+torchaudio==0.10.1
+torchvision==0.11.2
+soundfile==0.12.1
+matplotlib==3.7.1
