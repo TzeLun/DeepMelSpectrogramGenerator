@@ -7,7 +7,7 @@ The model architecture is inspired by DCGAN [1] and is conditioned by discrete v
 ## Dependencies
 Refer to [requirements.txt](https://github.com/TzeLun/DeepMelSpectrogramGenerator/blob/main/requirements.txt)
 
-Frechet Audio Distance is also used in `Evaluate.py`, and the link to the github repository used for this metric is available in the same script.
+Frechet Audio Distance is used in `Evaluate.py`, and the link to the github repository for this metric (including setup) is available in the same script.
 
 Just in case, `python>=3.9` is desired to support Python's multiprocessing libraries.
 
