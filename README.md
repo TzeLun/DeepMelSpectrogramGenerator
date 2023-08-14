@@ -5,18 +5,11 @@ The mel-spectrogram is in a (1, mel filter, time frame) format and can be conver
 The model architecture is inspired by DCGAN [1] and is conditioned by discrete variables. It is trained as a Wasserstein GAN with gradient penalty [2]. Some hints and tricks were adopted from a NIPS 2016 workshop [3]. As a nomenclature, this model is called CWGAN-GP.
 
 ## Dependencies
-Below are the list of libraries used in this repository:
-```
-torch
-torchaudio
-matplotlib
-soundfile
-numpy
-```
+Refer to [requirements.txt](https://github.com/TzeLun/DeepMelSpectrogramGenerator/blob/main/requirements.txt)
 
 Frechet Audio Distance is also used in `Evaluate.py`, and the link to the github repository used for this metric is available in the same script.
 
-In general, an up-to-date version of these libraries would work. Just in case, `python>=3.9` is desired to support Python's multiprocessing libraries.
+Just in case, `python>=3.9` is desired to support Python's multiprocessing libraries.
 
 ## Mel-spectrogram & Model Configuration
 The training parameters and mel-spectrogram configurations are within a `.yaml` file. The yaml file can be customized by editing the parameters in it and load it using argparser.
